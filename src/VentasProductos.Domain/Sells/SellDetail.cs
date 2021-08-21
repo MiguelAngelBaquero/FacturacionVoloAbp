@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Domain.Entities;
+﻿using VentasProductos.Products;
+using Volo.Abp.Domain.Entities;
 
 namespace VentasProductos.Sells
 {
@@ -10,5 +11,14 @@ namespace VentasProductos.Sells
         public int Quantity { get; set; }
         public float UnitPrice { get; set; }
         public float Amount { get; set; }
+
+        public SellDetail(int productId, int sellId)
+        {
+            ProductId = productId;
+            SellId = sellId;
+            Quantity = 1;
+
+        }
     }
+
 }

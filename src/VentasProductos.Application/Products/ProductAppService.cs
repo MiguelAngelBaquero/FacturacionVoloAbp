@@ -14,9 +14,9 @@ namespace VentasProductos.Products
             _productManager = productManager;
         }
 
-        public async Task<ProductDto> CreateProductAsync(string code, string name, float price)
+        public async Task<ProductDto> CreateProductAsync(CreateProductDto input)
         {
-            var product = await _productManager.CreateProductAsync(code, name, price);
+            var product = await _productManager.CreateProductAsync(input.Code, input.Name, input.Price);
             return ObjectMapper.Map<Product, ProductDto>(product);
         }
     }

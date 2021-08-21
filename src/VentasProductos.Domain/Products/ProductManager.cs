@@ -22,7 +22,7 @@ namespace VentasProductos.Products
             [NotNull] float price)
         {
             var existingProduct = await _productRepository.FindProductByCodeAsync(code);
-            if(existingProduct != null)
+            if(existingProduct == null)
             {
                 var product = new Product(code, name, price);
                 await _productRepository.InsertAsync(product);

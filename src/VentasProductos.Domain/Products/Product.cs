@@ -6,6 +6,7 @@ namespace VentasProductos.Products
 {
     public class Product : FullAuditedAggregateRoot<int>
     {
+
         public Product(string code, string name, float price)
         {
             Code = code;

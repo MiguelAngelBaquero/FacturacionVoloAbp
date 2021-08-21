@@ -22,9 +22,9 @@ namespace VentasProductos.Products
 
         [HttpPost]
         [Route("create")]
-        public async Task<ProductDto> CreateProductAsync(string code, string name, float price)
+        public async Task<ProductDto> CreateProductAsync(CreateProductDto input)
         {
-            return await _productAppService.CreateProductAsync(code, name, price);
+            return await _productAppService.CreateProductAsync(input);
         }
 
     }
